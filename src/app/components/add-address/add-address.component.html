@@ -1,0 +1,75 @@
+<app-inner-nav-user></app-inner-nav-user>
+<div class="container-body" style="text-align: center; padding-top: 100px;">MY BAG - - - - - - - - - - - - - <span
+        style="font-weight: bolder;color: royalblue;">ADDRESS</span> - -
+    - - - - - - - - - - - PAYMENT</div>
+<div class="content-body" style="display: flex; ">
+
+    <!-- style="display: flex; background-image: url('./assets/images/registerPageGif.gif'); background-repeat: no-repeat;"> -->
+    <div class="container left-body" style="width: 40%; margin: 50px 30px; margin-top: 250px;">
+        <div class="container card rounded-0" style="padding: 30px 30px;">
+            <div style="display: flex;">
+                <h4>Total Cart Value:</h4>
+                <h4 style="margin-left: 100px;">₹ {{totalAmount}}</h4>
+            </div>
+            <div style="display: flex;">
+                <h4>Total GST Value:</h4>
+                <h4 style="margin-left: 100px;">₹ {{gst}}</h4>
+            </div>
+            <div style="display: flex;">
+                <h2><b>Total Amount:</b></h2>
+                <h2 style="margin-left: 75px;"><b>₹ {{total}}</b></h2>
+            </div>
+        </div>
+        <!-- <img src="./assets/images/registerPageGif.gif" alt=""> -->
+
+    </div>
+    <div class="form-wrapper" style="width: 60%;">
+        <h1 class="text-title">Last Steps! Enter Your Details</h1>
+
+        <div class="field-group">
+            <div class="name" style="display: flex;">
+                <h3 style="margin: 5px;">Name:</h3><input style="margin-right: 4px; width: 90%;"
+                    [(ngModel)]="regFormData.name" class="input" type="text" id="txt-name" name="name"
+                    placeholder="Name" readonly="readonly" style="background-color: #d3d6db;" />
+                <h3 style="margin: 5px;">Age:</h3><input required style="margin-left: 4px; width: 10%;"
+                    [(ngModel)]="regFormData.age" class="input" type="text" id="age" name="age" placeholder="age" />
+
+                <!-- <div *ngIf="regFormData.age.invalid && (regFormData.age.dirty || regFormData.age.touched)" class="alert">
+                    <div *ngIf="regFormData.age.errors?.['required']">Name is required.</div>
+
+                </div> -->
+            </div>
+            <div style="display: flex;">
+                <h3 style="margin: 5px;">Email:</h3><input [(ngModel)]="regFormData.email" class="input" type="email"
+                    id="txt-email" name="email" placeholder="enter email Address" readonly="readonly"
+                    style="background-color: #d3d6db;" />
+            </div>
+            <div style="display: flex;">
+                <h3 style="margin: 5px;">Gender:</h3><input [(ngModel)]="regFormData.gender" class="input" type="text"
+                    id="txt-gender" name="gender" placeholder="Enter Gender" />
+            </div>
+
+            <div style="margin-left: 5px;">
+                <h3>Delivery Address:</h3><textarea class="input" name="address" id="txt-address" [(ngModel)]="regFormData.address"
+                    placeholder="Enter your Full Address" required></textarea>
+                    <!-- <div *ngIf="regFormData.address.touched" class="alert">
+                        <div *ngIf="regFormData.address.errors?.['required']">Name is required.</div>
+    
+                    </div> -->
+            </div>
+
+
+
+        </div>
+
+
+
+        <div class="field-group">
+            <input (click)=makePayment() class="btn-submit" type="submit" value="Make Payment" />
+        </div>
+
+
+    </div>
+
+
+</div>

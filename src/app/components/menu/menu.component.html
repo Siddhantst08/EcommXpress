@@ -1,0 +1,13 @@
+<div class="container-fluid">
+    <div class="mx-1" style="margin-top: 5px;"><b style="font-size:x-large;">Check these Out! <br></b></div>
+    <div class="container-fluid row my-4">
+        <div class="card border-0 rounded-0 col-sm" style=" margin: 5px 10px; margin-bottom: 20px;"
+            *ngFor="let items of arr; index as i; ">
+            <button (click)="onClick(i)" style="background-color: Transparent; background-repeat:no-repeat; border: none; overflow: hidden;">
+            <div class="center-cropped">
+                <img src={{items}} class="card-img-top">
+            </div>
+            </button>
+        </div>
+    </div>
+</div>

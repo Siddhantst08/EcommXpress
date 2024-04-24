@@ -1,0 +1,18 @@
+<app-inner-nav-user></app-inner-nav-user>
+
+<div class="container" style="padding-top: 80px;" >
+    <div class="container" *ngIf="arr.length == 0" style="text-align: center;">
+        <h1>Oops, You Have No Orders!!</h1>
+    </div>
+    <div class="my-3" *ngFor="let items of arr">
+    <div class="container card rounded-0" style="width: 80%; margin-top: 50px; background-color: lightgrey;">
+        <h1>Order ID: {{items.id}}</h1>
+        <p class="text-muted">Order Status: <b class="text-success">{{items.status}}</b></p>
+    </div>
+    <div class="container card rounded-0" style="width: 80%;">
+        <div class="containerm my-5" style="text-align: center;">
+            <h2 class="text-muted">Order Price: <span style="font-weight: bolder;">₹{{items.price}}.00</span></h2>
+        </div>
+    </div>
+</div>
+</div>

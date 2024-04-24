@@ -1,0 +1,44 @@
+<app-inner-nav></app-inner-nav>
+<div class="container-fluid d-flex justify-content-center" style="position: relative; padding-top: 80px;">
+
+    <hr>
+    <div class="container-fluid row" style="width: 100%;">
+        <div class="mx-1 my-2"><b style="font-size:x-large;">All Products <br></b>Price and other details may
+            vary based on
+            product size and colour.</div>
+        <div *ngFor="let items of arr | filter:searchText; index as i;" class="col-sm-3"
+            style="width: 22rem; margin: 5px 5px; margin-bottom: 20px;">
+
+            <div class="card border-primary rounded-0" *ngIf="i<limit">
+                <!-- <button (click)="browseToProduct(items.id)"
+                    style="background-color: Transparent; background-repeat:no-repeat; border: none; overflow: hidden;"> -->
+                    <div class="center-cropped" style="background-image: url('https://via.placeholder.com/200');">
+                        <img src={{items.imagePath}} class="card-img-top" width="50" height="150">
+                    </div>
+
+                    <div style="text-align: center;" class="card-body">
+
+                        <h2 class="card-title" style="margin-left: 50px; margin-bottom: 50px;"><b>{{items.name}}</b>
+                        </h2>
+                        <p class="card-text">{{items.description}}</p>
+
+                        <div style="display: flex; margin: 10px;">
+                            <a><button class="btn btn-danger" (click)="delete(items.id)">Delete</button> </a>
+                            <h4
+                                style="margin: 5px 20px; padding: 3px 5px; background-color: #f7f7f7; border-radius: 20%; font-weight: bold;">
+                                Product ID: {{items.id}}</h4>
+                        </div>
+
+                    </div>
+                <!-- </button> -->
+            </div>
+
+        </div>
+        <button class="btn" (click)="loadMore()">
+            <span [hidden]="loader" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+            <span [hidden]="loader">Please wait...</span>
+            <span [hidden]="hide">Load More...</span>
+        </button>
+
+    </div>
+</div>

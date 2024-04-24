@@ -1,0 +1,27 @@
+<app-inner-nav-user *ngIf="flag==true"></app-inner-nav-user>
+<app-nav *ngIf="flag==false"></app-nav>
+
+<div class="container" style="padding-top: 100px;">
+    <div class="container" style="display: flex;">
+        <div class="container ">
+            <img src={{product.imagePath}} alt="">
+        </div>
+        <div class="container ">
+            
+           <h1 style="font-size: xx-large; font-weight: bolder;" class="my-1">{{product.name}}</h1>
+           <p class="text-muted my-0">{{category}}</p>
+
+           <hr class="my-3">
+
+           <h2 style="font-weight: bolder;" class="my-0">₹{{product.price}}</h2>
+           <p class="text-muted my-0">MRP excl. of taxes</p>
+
+           <button class="btn btn-dark my-3" (click)="addToCart()">Add To Cart</button>
+
+           <p>
+            {{product.description}}.
+           </p>
+            
+        </div>
+    </div>
+</div>

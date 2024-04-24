@@ -1,0 +1,27 @@
+.center-cropped {
+    width: 100px;
+    height: 100px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+  }
+  img{
+    margin: 5px;
+  }
+
+  .card {
+    transition: all 0.3s;
+  }
+
+  .card:hover {
+    transform: scale(1.05);
+  }
+  .overlay {
+    z-index: -9;
+    margin-left: 700px;
+   
+  }
+  .simg{
+    margin-left: 95px;
+  }
+  

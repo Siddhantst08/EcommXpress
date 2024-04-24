@@ -1,0 +1,60 @@
+<app-inner-nav-user></app-inner-nav-user>
+<div class="container-fluid" style="padding-top: 100px;">
+    <div class="container" style="text-align: center;"><span style="font-weight: bolder; color: royalblue;">MY BAG</span> - - - - - - - - - - - - - ADDRESS - -
+        - - - - - - - - - - - PAYMENT</div>
+    <hr>
+    <!-- <div class="container"> -->
+        <div class="container-fluid" *ngIf="cartItems.length == 0" style="text-align: center;">
+            <h1>Oops The Cart is Empty!!</h1>
+        </div>
+    <!-- </div> -->
+    <div class="container" style="display: flex;">
+        <!-- <div *ngFor=" let items of cartItems"> -->
+        <div>
+            
+            <div class="container card rounded-0" style="width: 100%;"
+                *ngFor=" let items of cartItems; index as i" >
+                <!== yha se ngfor lgalo -->
+                    <div class="container rounded-0 my-3" style="display: flex;">
+                        <div class="container" style="width: 20%; overflow: hidden">
+                            <img src={{items.image}} alt="">
+                        </div>
+                        <div class="container" style="width: 80%; display: flex;">
+                            <div class="container">
+                                <h3><b>{{items.productName}}</b></h3>
+                                <p>{{items.description}}</p>
+                                <div>
+                                    <b>Quantity</b> : <button class="mx-2" (click)="decQ(i)">-</button> {{items.quantity}} <button
+                                        class="mx-2" (click)="incQ(i)">+</button>
+                                </div>
+                            </div>
+                            <div class="container">
+                                <span style="margin-left: 200px;"><b>₹{{items.price}}</b></span>
+                                <p style="text-align: end;">MRP incl. of all taxes</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn btn border" (click)="deleteItem(items.id)">Remove</button>
+            </div>
+        </div>
+        <div class="container card border-0 rounded-0" style="width: 30%;">
+            <button class="btn btn-primary my-3" (click)="placeOrder()">Place Order</button>
+            <h2 class="text-muted">Billing Details</h2>
+            <div class="container-fluid border py-2 px-2 rounded-0" style="display: flex;">
+                <div>Cart Total:</div>
+                <div style="margin-left: 100px;">₹{{cartTotal}}.0</div>
+            </div>
+            <div class="container border py-2 px-2 rounded-0" style="display: flex;">
+                <div>GST:</div>
+                <div style="margin-left: 137px;">₹{{gst}}</div>
+
+            </div>
+            <div class="container border py-2 px-2 rounded-0" style="display: flex;">
+                <div><b>Total Amount:</b></div>
+                <div style="margin-left: 80px;"><b>₹{{cartTotal+gst}}</b></div>
+
+            </div>
+        </div>
+    </div>
+
+</div>

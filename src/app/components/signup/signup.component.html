@@ -1,0 +1,64 @@
+<app-nav></app-nav>
+<div class="content-body" style="display: flex; padding-top: 100px;">
+  <!-- style="display: flex; background-image: url('./assets/images/registerPageGif.gif'); background-repeat: no-repeat;"> -->
+  <div class="left-body" style="width: 40%;">
+    <img src="./assets/images/registerPageGif.gif" alt="">
+    
+  </div>
+  <div class="form-wrapper" style="width: 60%;">
+    <h1 class="text-title">Hey, Register Now!</h1>
+
+    <div class="field-group">
+      <div class="name" style="display: flex;">
+      <input style="margin-right: 4px;" [(ngModel)]="regFormData.name" class="input" type="text" id="txt-name" name="name"
+        placeholder="Name" />
+      <input style="margin-left: 4px;" [(ngModel)]="regFormData.username" class="input" type="text" id="txt-username"
+        name="username" placeholder="Create Username" />
+      </div>
+      <input [(ngModel)]="regFormData.email" class="input" type="email" id="txt-email" name="email"
+        placeholder="Enter Email Address" />
+        <div class="attri" style="display: flex;">
+      <!-- <input style="margin-right: 4px;" [(ngModel)]="regFormData.gender" class="input" type="text" id="txt-gender" name="gender"
+        placeholder="Gender" /> -->
+      <input style="margin-left: 4px;" [(ngModel)]="regFormData.phone" class="input" type="text" id="txt-phone" name="phone"
+        placeholder="Phone" />
+      </div>
+      <!-- <input [(ngModel)]="regFormData.address" class="input" type="text" id="txt-address" name="address"
+        placeholder="Address" /> -->
+      <input [(ngModel)]="regFormData.password" class="input" type="password" id="txt-password1"
+        name="password1" placeholder="Create a Password" />
+      <input [(ngModel)]="confirmPass" class="input" type="password" id="txt-password2"
+        name="password2" placeholder="Re-enter Password" />
+    </div>
+
+    <div class="field-group-inline">
+      <label for="chk-rememberme">
+        <input class="checkbox" type="checkbox" id="chk-rememberme" name="rememberme" (click)="myFunction()" />
+        show password
+      </label>
+    </div>
+
+    <div class="field-group">
+      <input (click)=registerUser() class="btn-submit" type="submit" value="Register" />
+    </div>
+
+    <div class="separator-wrapper">
+      <div class="separator">
+        <span>OR</span>
+      </div>
+    </div>
+
+    <div class="field-group">
+      <a href="#login-facebook" class="link-social-login">
+        <img src="./assets/images/fb-logo.png" />
+        Login with Facebook
+      </a>
+      <a href="#login-google" class="link-social-login">
+        <img src="./assets/images/google-logo.png" />
+        Login with Google
+      </a>
+    </div>
+  </div>
+
+
+</div>

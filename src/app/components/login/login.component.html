@@ -1,0 +1,53 @@
+<app-nav></app-nav>
+<div class="content-body" style="padding-top: 100px;">
+    <div class="form-wrapper">
+        <h1 class="text-title">Hey there, Welcome back.</h1>
+        <div class="text-register">Don't have an account? <a routerLink="/signup">Register</a></div>
+
+        <div class="field-group">
+            <input [(ngModel)]="formData.username" class="input" type="text" id="txt-email" name="email" placeholder="E-mail / Username" />
+            <input [(ngModel)]="formData.password" class="input" type="password" id="txt-password" name="password" placeholder="Password" />
+        </div>
+
+        <div class="field-group-inline">
+            <label for="chk-rememberme">
+                <input class="checkbox" type="checkbox" id="chk-rememberme" name="rememberme" (click)="myFunction()"/>
+                show password
+            </label>
+            <a href="#forget-password"> Forgot Password? </a>
+        </div>
+
+        <div class="field-group">
+            <input (click)="logIn()" class="btn-submit" type="submit" value="Login" />
+        </div>
+
+        <div class="separator-wrapper">
+            <div class="separator">
+                <span>OR</span>
+            </div>
+        </div>
+
+        <div class="field-group">
+            <a href="#login-facebook" class="link-social-login">
+                <img src="./assets/images/fb-logo.png" />
+                Login with Facebook
+            </a>
+            <a href="#login-google" class="link-social-login">
+                <img src="./assets/images/google-logo.png" />
+                Login with Google
+            </a>
+        </div>
+
+        <div class="footnote-wrapper">
+            <div class="footnote footnote-left">
+                Don't have an account yet?
+                <br />
+                <a routerLink="/signup">sign up now</a>
+            </div>
+            <div class="footnote footnote-right">
+                User not active yet?
+                <br />
+                <a href="#resend-verification"> Resend activation email </a>
+            </div>
+        </div>
+    </div>

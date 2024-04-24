@@ -1,0 +1,38 @@
+<app-inner-nav></app-inner-nav>
+<div class="content-body" style="display: flex; padding-top: 80px;">
+    <!-- style="display: flex; background-image: url('./assets/images/registerPageGif.gif'); background-repeat: no-repeat;"> -->
+    <div class="left-body" style="width: 40%;">
+        <img src="./assets/images/addnew-gif.gif" alt="add-new" width="250%">
+
+    </div>
+    <div class="form-wrapper" style="width: 60%;">
+        <h1 class="text-title">Hey Admin, Add new Product!</h1>
+
+        <div class="field-group">
+            <div class="name" style="display: flex;">
+                <input style="margin-right: 4px;" [(ngModel)]="regFormData.Name" class="input" type="text" id="txt-name"
+                    name="name" placeholder="Product Name" />
+                <input style="margin-left: 4px;" [(ngModel)]="regFormData.CategoryId" class="input" type="number"
+                    id="txt-username" name="catid" placeholder="Category id" />
+            </div>
+            <input [(ngModel)]="regFormData.Price" class="input" type="number" id="txt-email" name="price"
+                placeholder="Enter Price" />
+
+            <textarea [(ngModel)]="regFormData.Description" name="desc" class="input" placeholder="Enter Description"></textarea>
+            <input [(ngModel)]="regFormData.Quantity" class="input" type="number" id="txt-phone" name="quantity"
+                placeholder="Enter Quantity" />
+
+
+            <div class="form-group">
+                <label> Upload File</label>
+                <input type="file" class="input" (change)="uploadFile($event)" />
+            </div>
+        </div>
+
+        <div class="field-group">
+            <input (click)=postDataReg() class="btn-submit" type="submit" value="Add Product" />
+        </div>
+    </div>
+
+
+</div>

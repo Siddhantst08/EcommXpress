@@ -1,0 +1,60 @@
+<div class="container-fluid d-flex justify-content-center" style="position: relative;">
+
+    <hr>
+    <div class="container-fluid row" style="width: 100%;">
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                {{sortOption}}
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                <li><a class="dropdown-item" (click)="makeNormal()">Select Sorting Options</a></li>
+                <li><a class="dropdown-item" (click)="makeSortA2Z()">A to Z</a></li>
+                <li><a class="dropdown-item" (click)="makeSortH2L()">Price High To Low</a></li>
+                <li><a class="dropdown-item" (click)="makeSortL2H()">Price Low To High</a></li>
+            </ul>
+        </div>
+        <div class="mx-1 my-2"><b style="font-size:x-large;">{{category}} Results <br></b>Price and other details may
+            vary based on
+            product size and colour.</div>
+        <div *ngFor="let items of arr | filter:searchText; index as i;" class="col-sm-3"
+            style="width: 22rem; margin: 5px 5px; margin-bottom: 20px;">
+
+            <div class="card border-primary rounded-0" *ngIf="i<limit">
+                <button (click)="browseToProduct(items.id)"
+                    style="background-color: Transparent; background-repeat:no-repeat; border: none; overflow: hidden;">
+                    <div class="center-cropped" style="background-image: url('https://via.placeholder.com/200');">
+                        <img src={{items.imagePath}} class="card-img-top" width="50" height="150">
+                    </div>
+
+                    <div style="text-align: center;" class="card-body">
+
+                        <h2 class="card-title" style="margin-left: 50px; margin-bottom: 50px;"><b>{{items.name}}</b>
+                        </h2>
+                        <p class="card-text">{{items.description}}</p>
+
+                        <div style="display: flex; margin: 10px;">
+                            <a><button class="btn btn-dark" (click)="addToCart(items.id)">Add to Cart</button> </a>
+                            <h4
+                                style="margin: 5px 20px; padding: 3px 5px; background-color: #f7f7f7; border-radius: 20%; font-weight: bold;">
+                                ₹{{items.price}}.00</h4>
+                        </div>
+
+                    </div>
+                </button>
+            </div>
+
+        </div>
+        <button class="btn" (click)="loadMore()">
+            <span [hidden]="loader" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+            <span [hidden]="loader">Please wait...</span>
+            <span [hidden]="hide">Load More...</span>
+        </button>
+
+    </div>
+
+    <div class="container-fluid overlay" style="width: 10%; position: absolute;">
+        <img src="./assets/images/backimg1.jpg" alt="backimg">
+        <img class="simg" src="./assets/images/backimg2.jpg" alt="backimg">
+    </div>
+</div>

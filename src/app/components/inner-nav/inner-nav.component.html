@@ -1,0 +1,39 @@
+
+<nav class="sticky">
+    <input type="checkbox" id="check">
+    <label for="check" class="checkbtn">
+        <i class="fas fa-bars"></i>
+    </label>
+    <label class="logo">
+        <a routerLink="/home-admin" style="text-decoration: none; color: white;" (click)="setLocal()">
+            <img src="./assets/images/ecommxpress.gif" alt=""><svg xmlns="http://www.w3.org/2000/svg" width="30" height="46" fill="currentColor" class="bi bi-bag-check-fill" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M10.5 3.5a2.5 2.5 0 0 0-5 0V4h5zm1 0V4H15v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4h3.5v-.5a3.5 3.5 0 1 1 7 0m-.646 5.354a.5.5 0 0 0-.708-.708L7.5 10.793 6.354 9.646a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0z"/>
+              </svg>
+        </a>
+</label>
+    <ul>
+        <li>
+            <div class="input-group mb-3" id="searchbar">
+                <button (click)=searchItem()><span class="input-group-text" id="basic-addon1">🔍</span></button>
+                <input [(ngModel)]="searchText" type="search" class="form-control" placeholder="Search"
+                    aria-label="Username" aria-describedby="basic-addon1">
+            </div>
+           
+        </li>
+        <li><a  class="btn btn-success" routerLink="/addnew">Add Item(Admin)</a></li>
+        <li><a class="btn btn-danger"  routerLink="/del" (click)="setDel()">Delete Item(Admin)</a></li>
+       
+        
+        <li>
+            <div class="dropdown" >
+                <button style="color: white;" class="btn btn dropdown-toggle border-0" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                   Hey, Admin
+                </button>
+                <ul class="dropdown-menu rounded-0" aria-labelledby="dropdownMenuButton1" style="background-color: navy;">
+                  <li><a  routerLink="/" (click)="logout()" class="btn btn-outline-danger mx-2">Logout</a></li>
+                  
+                </ul>
+              </div>
+        </li>  <!-- menu -->
+    </ul>
+</nav>
